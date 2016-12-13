@@ -17,8 +17,8 @@
 
     <meta property="og:title" content="Retreat for Visionary Artists • UK • June 2017"/>
     <meta property="og:image" content="http://tatefuture.com/images/manifesting-meg-benedicte.jpg"/>
-    <meta property="og:site_name" content="Invitation: Retreat for Visionary Artists • UK • June 2017"/>
-    <meta property="og:description" content="Chapel on the edge of Snowdonia National Park • Creative workshops and facilitators • Potential for collaboration with likeminded peers • Fair and transparent revenue share • Equity ownership in the company"/>
+    <meta property="og:site_name" content="Retreat for Visionary Artists • UK • June 2017"/>
+    <meta property="og:description" content="Sending good vibes 🌎&nbsp;&nbsp;🌍&nbsp;&nbsp;🌏"/>
 
 	</head>
 	<body>
@@ -44,11 +44,15 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>#tatefuture</h1>
-							<h2 style="padding: 10px; border: 3px solid white; margin-bottom: 25px; display: inline-block;">Invitation: Retreat for Visionary Artists • UK • June 2017 </h2>
-							<h3>Current state:&nbsp; &nbsp;early commitments&nbsp; &nbsp;•&nbsp; &nbsp;initial interest&nbsp; &nbsp;•&nbsp; &nbsp;reality check</h3>
+
+							<h3>Retreat for Visionary Artists&nbsp; &nbsp;•&nbsp; &nbsp;UK&nbsp; &nbsp;•&nbsp; &nbsp;June 2017</h2>
+
+							<img id="genesis" src="genesis.jpg">
+							
+							<h3>Early commitments&nbsp; &nbsp;•&nbsp; &nbsp;Initial interest&nbsp; &nbsp;•&nbsp; &nbsp;Reality check</h3>
 							<ul>
 								<li>Chapel in Wales</li>
-								<li>Potential for collaboration </li>
+								<li>Co-co-collaborations</li>
 								<li>Ongoing online auction</li>
 								<li>Fair and transparent revenue share</li>
 								<li>Equity ownership in the company</li>
@@ -60,6 +64,8 @@
 							<h2 style="padding: 10px; border: 3px solid white; margin-bottom: 25px; display: inline-block;">
 								<a href="http://bit.ly/tatef">Google Doc</a>
 							</h2>
+
+							<p>You should seriously read <a href="http://bit.ly/tatef">Google Doc</a> as it contains so much more details...</p>
 
 <!-- 							<ul class="actions">
 								<li><a href="#three" class="button scrolly">email@genesis.re</a></li>
@@ -149,9 +155,9 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Get in touch&nbsp; &nbsp;•&nbsp; &nbsp;Provide feedback&nbsp; &nbsp;•&nbsp; &nbsp;Get on board</h2>
-							<h2>Early commitments&nbsp; &nbsp;•&nbsp; &nbsp;Initial interest&nbsp; &nbsp;•&nbsp; &nbsp;Reality check</h2>
 							
+							<h2>Get in touch&nbsp; &nbsp;•&nbsp; &nbsp;Provide feedback&nbsp; &nbsp;•&nbsp; &nbsp;Get on board</h2>
+
 							<br>
 
 							<img src="images/Michal-Stefanow-real-person.jpg">
@@ -166,6 +172,9 @@
 							</ul>
 
 							<h2>Sending good vibes 🌎&nbsp;&nbsp;🌍&nbsp;&nbsp;🌏</h2>
+							
+							<br>
+							<br>
 
 							<div class="split style1">
 								<section>
@@ -238,6 +247,49 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+							<script>
+
+								(function() {
+								    var lastTime = 0;
+								    var vendors = ['ms', 'moz', 'webkit', 'o'];
+								    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+								        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+								        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+								                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+								    }
+								 
+								    if (!window.requestAnimationFrame)
+								        window.requestAnimationFrame = function(callback, element) {
+								            var currTime = new Date().getTime();
+								            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+								            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+								              timeToCall);
+								            lastTime = currTime + timeToCall;
+								            return id;
+								        };
+								 
+								    if (!window.cancelAnimationFrame)
+								        window.cancelAnimationFrame = function(id) {
+								            clearTimeout(id);
+								        };
+								}());
+
+								var hue = 0;
+								var hueStep = 1;
+								(function animloop(){
+
+								  hue += hueStep;
+								  
+								  var filter = "saturate(150%) hue-rotate(" + hue + "deg)"; 
+
+								  $("#genesis").css({"filter": filter});
+
+								  requestAnimationFrame(animloop);
+								})();
+
+
+							</script>
 
 	</body>
 </html>
