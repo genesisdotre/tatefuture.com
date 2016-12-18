@@ -47,7 +47,7 @@
 
 							<h3>Retreat for Visionary Artists&nbsp; &nbsp;•&nbsp; &nbsp;UK&nbsp; &nbsp;•&nbsp; &nbsp;June 2017</h2>
 
-							<img id="genesis" src="genesis.jpg">
+							<img id="genesis" src="genesis.jpg" style="max-width: 100%; filter: saturate(150%) hue-rotate(0deg);">
 							
 							<h3>Early commitments&nbsp; &nbsp;•&nbsp; &nbsp;Initial interest&nbsp; &nbsp;•&nbsp; &nbsp;Reality check</h3>
 							<ul>
@@ -56,7 +56,6 @@
 								<li>Ongoing online auction</li>
 								<li>Fair and transparent revenue share</li>
 								<li>Equity ownership in the company</li>
-								<li>Promoting <b>Visionary Art</b></li>
 								<li>Collectively raising vibration of the planet</li>
 								<li>Manifesting infinite abundance</li>
 							</ul>
@@ -166,9 +165,9 @@
 
 							<ul>
 								<li>Ozora 2009, Boom x3, Burning Man 2011, Symbiosis 2016, Glastonbury 2013</li>
-								<li>Ayahuasca in Peruvian jungle in 2015</li>
-								<li>Two daughters: Gaia (4.5) and Aura (2)</li>
-								<li>My better half is applying to MAPS to get training in MDMA therapy</li>
+								<li>Ayahuasca in Peruvian jungle 2015</li>
+								<li>Two cosmic kids: Gaia (4.5) and Aura (2)</li>
+								<li>My better half is a psychologist applying to MAPS to get training in MDMA therapy</li>
 							</ul>
 
 							<h2>Sending good vibes 🌎&nbsp;&nbsp;🌍&nbsp;&nbsp;🌏</h2>
@@ -275,19 +274,25 @@
 								        };
 								}());
 
-								var hue = 0;
-								var hueStep = 1;
+								var hueStep = 0.2;
+								var hueAnim = 0; // one is added in the loop...
+								var hueScroll = 0; // ...second is added in scroll
+
 								(function animloop(){
-
-								  hue += hueStep;
-								  
-								  var filter = "saturate(150%) hue-rotate(" + hue + "deg)"; 
-
-								  $("#genesis").css({"filter": filter});
-
-								  requestAnimationFrame(animloop);
+									hueAnim += hueStep;
+									_updateHue();
+									requestAnimationFrame(animloop);
 								})();
 
+								$(window).on("scroll", function(event) {
+									hueScroll = $(document).scrollTop();
+									_updateHue();
+								});
+
+								function _updateHue() {
+									var filter = "saturate(150%) hue-rotate(" + (hueAnim + hueScroll) + "deg)"; 
+									$("#genesis").css({"filter": filter});
+								}
 
 							</script>
 
